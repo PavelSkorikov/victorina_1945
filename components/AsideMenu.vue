@@ -1,50 +1,70 @@
 <template>
   <el-menu
-    default-active="2"
+    default-active="$route.path"
+    router="router"
     class="el-menu-vertical-demo"
     @open="handleOpen"
     @close="handleClose"
     background-color="darkslategrey"
-    text-color="#fff"
-    active-text-color="#ffd04b">
-    <el-submenu index="1">
-      <template slot="title">
-        <i class="el-icon-location"></i>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group title="Group One">
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item one</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">item four</template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-submenu>
-    </el-submenu>
+    text-color="grey"
+    active-text-color="#fff">
+    <el-menu-item index="/">
+        <i class="el-icon-s-home"></i>
+        <span>Начало</span>
+    </el-menu-item>
     <el-menu-item index="2">
-      <i class="el-icon-menu"></i>
-      <span>Navigator Two</span>
-    </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <i class="el-icon-document"></i>
-      <span>Navigator Three</span>
-    </el-menu-item>
-    <el-menu-item index="4">
       <i class="el-icon-setting"></i>
-      <span>Navigator Four</span>
+      <span>Об авторах</span>
     </el-menu-item>
+    <div class="progress-user">
+      <div class="info-user">
+        {{ user.name }}<br>
+        {{ user.surname }}
+      </div>
+      <div class="steps-user">
+        <el-steps direction="vertical" :active="1">
+          <el-step title="Step 1"></el-step>
+          <el-step title="Step 2"></el-step>
+          <el-step title="Step 3"></el-step>
+        </el-steps>
+      </div>
+    </div>
   </el-menu>
 </template>
 
 <script>
     export default {
-        name: "AsideMenu"
+        name: "AsideMenu",
+      computed: {
+        user() {
+          return this.$store.getters.user;
+        }
+      },
+      methods: {
+          handleOpen() {
+
+          },
+          handleClose() {
+
+          }
+      }
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .progress-user {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .info-user {
+    padding: 0 10px 0 10px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .steps-user {
+    display: flex;
+    justify-content: center;
+  }
 </style>

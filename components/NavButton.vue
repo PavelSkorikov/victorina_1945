@@ -1,5 +1,5 @@
 <template>
-  <el-button type="warning" round>{{ text }}</el-button>
+  <el-button type="warning" round @click="onClick">{{ text }}</el-button>
 </template>
 
 <script>
@@ -7,6 +7,11 @@
         name: "NavButton",
       props: {
           text: String
+      },
+      methods: {
+          onClick() {
+            this.$emit('onClick')
+          }
       }
     }
 </script>
