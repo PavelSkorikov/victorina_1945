@@ -22,10 +22,8 @@
         {{ user.surname }}
       </div>
       <div class="steps-user">
-        <el-steps direction="vertical" :active="1">
-          <el-step title="Step 1"></el-step>
-          <el-step title="Step 2"></el-step>
-          <el-step title="Step 3"></el-step>
+        <el-steps v-if="isLogin" direction="vertical" :active="active_step" finish-status="success">
+          <el-step v-for="step of steps" :title="step"></el-step>
         </el-steps>
       </div>
     </div>
@@ -35,9 +33,18 @@
 <script>
     export default {
         name: "AsideMenu",
+      data() {
+        return {
+          active_step: 0,
+          steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        };
+      },
       computed: {
         user() {
           return this.$store.getters.user;
+        },
+        isLogin() {
+          return this.$store.getters.islogin;
         }
       },
       methods: {

@@ -1,12 +1,13 @@
 <template>
-  <el-button type="warning" round @click="onClick">{{ text }}</el-button>
+  <el-button type="warning" round @click="onClick" :icon="icon">{{ text }}</el-button>
 </template>
 
 <script>
     export default {
         name: "NavButton",
       props: {
-          text: String
+          text: String,
+          icon: String,
       },
       methods: {
           onClick() {

@@ -13,5 +13,6 @@ export const actions = {
   }
 }
 export const getters = {
-  user: state => state.user
+  user: state => state.user,
+  islogin: state => !!state.user,
 }
