@@ -41,6 +41,7 @@ html {
 }
 .main-conteiner {
   background: darkslategrey;
+  height: 100vh;
 }
 .el-header {
   color: white;
@@ -62,7 +63,7 @@ h1 {
 }
 .el-main {
   margin: 0 auto;
-  min-height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   text-align: center;

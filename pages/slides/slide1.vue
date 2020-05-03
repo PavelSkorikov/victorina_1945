@@ -15,7 +15,7 @@
 <script>
     import NavButton from "../../components/NavButton";
     export default {
-        name: "1",
+        name: "slide1",
       components: {NavButton}
     }
 </script>

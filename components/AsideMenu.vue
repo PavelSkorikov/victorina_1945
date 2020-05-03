@@ -22,8 +22,8 @@
         {{ user.surname }}
       </div>
       <div class="steps-user">
-        <el-steps v-if="isLogin" direction="vertical" :active="active_step" finish-status="success">
-          <el-step v-for="step of steps" :title="step"></el-step>
+        <el-steps v-if="isLogin" direction="vertical" :active="active_step">
+          <el-step v-for="n in count_steps" :key="n">{{n}}</el-step>
         </el-steps>
       </div>
     </div>
@@ -35,8 +35,7 @@
         name: "AsideMenu",
       data() {
         return {
-          active_step: 0,
-          steps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+
         };
       },
       computed: {
@@ -45,7 +44,13 @@
         },
         isLogin() {
           return this.$store.getters.islogin;
-        }
+        },
+        count_steps() {
+          return this.$store.getters.count_steps;
+        },
+        active_step() {
+          return String(this.$store.getters.active_step);
+        },
       },
       methods: {
           handleOpen() {
