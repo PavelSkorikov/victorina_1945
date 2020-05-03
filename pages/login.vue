@@ -63,7 +63,7 @@
           this.$refs['form'].validate((valid) => {
             if (valid) {
               this.$store.commit('setUser', this.form);
-              this.$router.push('/tour1')
+              this.$router.push('/victorina/1')
             } else {
               this.$notify.error({
                 title: 'Ошибка',

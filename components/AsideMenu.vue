@@ -23,7 +23,7 @@
       </div>
       <div class="steps-user">
         <el-steps v-if="isLogin" direction="vertical" :active="active_step">
-          <el-step v-for="n in count_steps" :key="n">{{n}}</el-step>
+          <el-step v-for="n in count_steps" :key="n" style="font-size: 30px">{{n}}</el-step>
         </el-steps>
       </div>
     </div>
