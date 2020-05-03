@@ -13,7 +13,7 @@
 </template>
 
 <script>
-    import NavButton from "../../components/NavButton";
+    import NavButton from "../components/NavButton";
     export default {
         name: "slide1",
       components: {NavButton}

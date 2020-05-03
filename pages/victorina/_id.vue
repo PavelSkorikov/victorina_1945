@@ -10,13 +10,18 @@
         </el-radio>
       </li>
     </ul>
+    <div class="card-wrapper">
+      <NavButton icon="el-icon-arrow-right" @onClick="next_slide"/>
+    </div>
   </el-card>
 </template>
 
 <script>
+    import NavButton from "@/components/NavButton";
     export default {
         name: "index",
-        data() {
+      components: {NavButton},
+      data() {
           return {
             answer: ''
           }
@@ -31,6 +36,12 @@
           question() {
             return this.$store.getters.question(this.$route.params.id)
           }
+      },
+      methods: {
+          next_slide() {
+            let path = '/slides/'+this.$route.params.id
+            this.$router.push(path)
+          }
       }
     }
 </script>
@@ -38,6 +49,9 @@
 <style scoped lang="scss">
   .el-card {
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
   }
   .clearfix {
