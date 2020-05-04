@@ -3,28 +3,33 @@ import {questions} from "./questions";
 export const state = () => ({
   user: {},
   steps: questions,
-  active_step: 0
 })
 
 export const mutations = {
   setUser(state, user) {
     state.user = user
   },
-  setActiveStep(state, id) {
-    state.active_step = id
+  clearUser(state) {
+    state.user = {}
+  },
+  setCurrentQuestion(state) {
+    state.user.current_question++
+  },
+  setUserRating(state) {
+    state.user.rating++
   }
 }
 export const actions = {
-  fetchUser({commit}) {
+  createUser({commit}) {
 
   }
 }
 export const getters = {
   user: state => state.user,
-  islogin: state => !!state.user,
   count_steps: state => state.steps.length,
-  active_step: state => state.active_step,
+  current_question: state => state.user.current_question,
   question: state => id => {
     return state.steps[id-1]
-  }
+  },
+  rating: state => state.user.rating,
 }

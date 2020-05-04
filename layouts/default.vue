@@ -58,7 +58,7 @@ h1 {
     font-size: 1.5em;
   }
   @media (max-width: 400px) {
-    font-size: 1em;
+    font-size: 20px;
   }
 }
 .el-main {

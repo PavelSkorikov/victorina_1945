@@ -1,14 +1,18 @@
 <template>
   <div class="wrapper">
     <h1>Произошла ошибка!</h1><br>
-
-    <nuxt-link to="/" class="link">Вернуться на главную</nuxt-link>
+    <el-card shadow="always">
+      Что-то пошло не так :(
+    </el-card>
+    <NavButton text="На главную" @onClick="$router.push('/')"/>
   </div>
 </template>
 
 <script>
+    import NavButton from "../components/NavButton";
     export default {
-        name: "error"
+        name: "error",
+      components: {NavButton},
     }
 </script>
 
@@ -20,6 +24,12 @@
     color: red;
     font-size: 40px;
     margin-bottom: 40px;
+  }
+  .el-card {
+    max-width: 600px;
+    opacity: .6;
+    display: flex;
+    font-size: 20px;
   }
   .link {
     font-size: 30px;

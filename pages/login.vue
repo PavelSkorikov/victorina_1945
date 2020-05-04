@@ -4,19 +4,19 @@
       <div slot="header" class="clearfix">
         <span>Для начала введите Ваши данные:</span>
       </div>
-      <el-form ref="form" :model="form" :rules="rules" label-width="100px" label-position="left">
+      <el-form ref="form" :model="user" :rules="rules" label-width="100px" label-position="left">
         <el-form-item label="Имя" prop="name">
-          <el-input v-model="form.name"></el-input>
+          <el-input v-model="user.name"></el-input>
         </el-form-item>
         <el-form-item label="Фамилия" prop="surname">
-          <el-input v-model="form.surname"></el-input>
+          <el-input v-model="user.surname"></el-input>
         </el-form-item>
         <el-form-item label="Школа" prop="school_name">
-          <el-input v-model="form.school_name"></el-input>
+          <el-input v-model="user.school_name"></el-input>
         </el-form-item>
         <el-form-item label="Класс" prop="class">
-          <el-select v-model="form.class">
-            <el-option v-for="item of form.classes" :key="item" :label="item" :value="item"></el-option>
+          <el-select v-model="user.class">
+            <el-option v-for="item of user.classes" :key="item" :label="item" :value="item"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
@@ -32,12 +32,14 @@
       components: {NavButton},
       data() {
         return {
-          form: {
+          user: {
             school_name: '',
             class: '',
             classes: ['1 класс','2 класс','3 класс','4 класс','5 класс','6 класс','7 класс','8 класс','9 класс','10 класс','11 класс'],
             name: '',
             surname: '',
+            rating: 0,
+            current_question: 0
           },
           rules: {
             name: [
@@ -58,11 +60,14 @@
           }
         }
       },
+      mounted() {
+          this.$store.commit('clearUser')
+      },
       methods: {
         onSubmit() {
           this.$refs['form'].validate((valid) => {
             if (valid) {
-              this.$store.commit('setUser', this.form);
+              this.$store.commit('setUser', this.user);
               this.$router.push('/victorina/1')
             } else {
               this.$notify.error({

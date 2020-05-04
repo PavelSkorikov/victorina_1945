@@ -7,6 +7,11 @@
       <br>
       И вы сможете проверить свои знания об этих событиях.
     </el-card>
+    <el-card shadow="always">
+      ВНИМАНИЕ!<br>
+      Во время прохождения викторины нельзя возвращаться на предыдущую страницу или перезагружать текущую.<br>
+      В этом случае Вы будете возвращены на главную страницу.
+    </el-card>
     <NavButton text="Начать" @onClick="handleClick"/>
   </section>
 </template>
@@ -15,6 +20,9 @@
 import NavButton from "../components/NavButton";
 export default {
   components: {NavButton},
+  mounted() {
+    this.$store.commit('clearUser')
+  },
   methods: {
     handleClick() {
       this.$router.push('/login')
