@@ -1,5 +1,5 @@
 <template>
-  <section class="finish-page">
+  <section class="finish-page" v-if="isUser">
     <div class="congradulations" v-if="isFinalist">
       <el-card class="box-card">
           <div class="title">ПОЗДРАВЛЯЕМ!</div>
@@ -34,17 +34,20 @@
         name: "finish",
         data() {
           return {
+            isUser: true,
             isFinalist: false,
           }
         },
         components: {NavButton},
         computed: {
           user() {
-            return this.$store.getters.user
+            let user_data = this.$store.getters.user
+            return user_data
           },
           result() {
             let percent = Math.round((this.user.rating/this.$store.getters.count_steps) * 100)
             if(percent>50) this.isFinalist = true
+            if(!percent) this.isUser = false
             return String(percent)+'%'
           }
         }
