@@ -26,17 +26,18 @@
           <div slot="header" class="clearfix">
             <span>Автор идеи, дизайн, контент:</span>
           </div>
-          <p>Педагог дополнительного школьного образования, Чертковского Детского дома творчества</p>
+          <p>Педагог дополнительного образования</p>
           <br>
           <p style="font-style: italic">Скорикова Т.А.</p>
-          <p><a href="mailto:cta00@mail.ru">email: cta00@mail.ru</a></p>
         </el-card>
+        <br>
         <br>
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>Разработка:</span>
           </div>
           <p style="font-style: italic">Скориков П.Г.</p>
+          <br>
           <p><a href="mailto:spg75@yandex.ru.ru">email: spg75@yandex.ru</a></p>
         </el-card>
       </div>

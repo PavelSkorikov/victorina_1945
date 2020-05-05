@@ -51,7 +51,7 @@
               { min: 3, max: 20, message: 'от 3 до 20 символов', trigger: 'blur' }
             ],
             school_name: [
-              { required: true, message: 'Введите название Вашего учебного заведения', trigger: 'blur' },
+              { required: false, message: 'Введите название Вашей школы', trigger: 'blur' },
               { min: 2, max: 100, message: 'от 2 до 100 символов', trigger: 'blur' }
             ],
             class: [
