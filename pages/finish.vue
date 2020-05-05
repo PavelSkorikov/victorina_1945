@@ -6,7 +6,7 @@
           <div class="user">{{user.name}}</div>
           <div class="user">{{user.surname}}</div>
           <div class="user">Ученик {{user.class}}а</div>
-          <div class="user" v-if="user.school_name">Учебного заведения: {{user.school_name}}а</div>
+          <div class="user" v-if="user.school_name">Учебного заведения: {{user.school_name}}</div>
       </el-card>
       <el-card class="info box-card">
         Вы прошли викторину с результатом {{result}} правильных ответов
