@@ -14,8 +14,6 @@
   "dependencies": {
     "element-ui": "^2.4.11",
     "imagemin-pngquant": "^8.0.0",
-    "imagemin-webp": "^5.1.0",
-    "imagemin-webpack-plugin": "^2.4.2",
     "nuxt": "^2.0.0",
     "nuxt-imagemin": "^1.0.0"
   },

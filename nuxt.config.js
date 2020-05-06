@@ -1,5 +1,3 @@
-// import imageminWebp from 'imagemin-webp'
-// let ImageminPlugin = require('imagemin-webpack-plugin').default
 const imageminPngquant = require('imagemin-pngquant');
 
 export default {
@@ -34,12 +32,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui',
-    // new ImageminPlugin({
-    //   pngquant: {
-    //     quality: '35-50',
-    //   }
-    // })
+    '@/plugins/element-ui'
   ],
   /*
   ** Nuxt.js dev-modules
