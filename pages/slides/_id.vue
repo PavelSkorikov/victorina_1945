@@ -26,7 +26,7 @@
             this.$router.push(path)
           },
           resolve_img_url: function (path) {
-            let images = require.context('@/static/pages/slides/', false, /\.png$|\.jpg$/)
+            let images = require.context('~/assets/pages/slides/', false, /\.png$|\.jpg$/)
             return images("./"+path)
           }
       }
