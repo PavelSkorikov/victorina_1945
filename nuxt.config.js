@@ -1,3 +1,7 @@
+// import imageminWebp from 'imagemin-webp'
+// let ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminPngquant = require('imagemin-pngquant');
+
 export default {
   mode: 'universal',
   /*
@@ -30,7 +34,12 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    // new ImageminPlugin({
+    //   pngquant: {
+    //     quality: '35-50',
+    //   }
+    // })
   ],
   /*
   ** Nuxt.js dev-modules
@@ -43,13 +52,11 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    [
-      "nuxt-imagemin",
-      {
-        optipng: { optimizationLevel: 9 }
-      }
-    ]
+    ['nuxt-imagemin', {
+      plugins: [
+        imageminPngquant({quality: [0.3, 0.5]})
+      ]
+    }]
   ],
   /*
   ** Axios module configuration
