@@ -14,7 +14,7 @@
   "dependencies": {
     "element-ui": "^2.4.11",
     "imagemin-pngquant": "^8.0.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.15.8",
     "nuxt-imagemin": "^1.0.0"
   },
   "devDependencies": {
